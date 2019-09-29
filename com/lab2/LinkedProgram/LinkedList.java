@@ -57,4 +57,17 @@ public class LinkedList {
         le = null;
         return temp;
     }
+    
+    public void printLinkedListHead() {
+        if (head == null) {
+            System.out.println("Empty list!");
+            return;
+        }
+        le = head;
+        for (int i = 0; i < _nElements - 1; i++) {
+            System.out.print(le.getData() + "-->");
+            le = le.getNext();
+        }
+        System.out.println(le.getData());
+    }
 }
