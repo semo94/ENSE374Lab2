@@ -30,4 +30,31 @@ public class LinkedList {
         }
         return le;
     }
+
+    public ListElement deleteElement(int index) {
+        // check if the list is empty
+        if (index > _nElements) {
+            return null;
+        }
+        ListElement temp;
+        le = head;
+        temp = null;
+        // interate through the list to find the element by its index
+        if (index == 0) {
+            head = null;
+        } else {
+            for (int i = 0; i < index; i++) {
+                temp = le;
+                le = le.getNext();
+            }
+        }
+        // Remove the element
+        if (temp != null) {
+            temp.setNext(le.getNext());
+        }
+        _nElements--;
+        temp = le;
+        le = null;
+        return temp;
+    }
 }
