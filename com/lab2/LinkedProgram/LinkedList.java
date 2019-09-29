@@ -68,8 +68,21 @@ public class LinkedList {
         }
         le = head;
         for (int i = 0; i < _nElements - 1; i++) {
-            System.out.print(le.getData() + "-->");
+            System.out.print(le.getData() + " --> ");
             le = le.getNext();
+        }
+        System.out.println(le.getData());
+    }
+
+    public void printLinkedListTail() {
+        if (head == null) {
+            System.out.println("Empty list!");
+            return;
+        }
+        le = tail;
+        for (int i = 0; i < _nElements - 1; i++) {
+            System.out.print(le.getData() + " <-- ");
+            le = le.getPrev();
         }
         System.out.println(le.getData());
     }

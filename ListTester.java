@@ -32,5 +32,7 @@ public class ListTester {
         // print the generated list
         System.out.println("Printing the list starting from the head:");
         ll.printLinkedListHead();
+        System.out.println("Printing the list starting from the tail:");
+        ll.printLinkedListTail();
     }
 }
