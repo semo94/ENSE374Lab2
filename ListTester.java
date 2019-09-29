@@ -23,5 +23,14 @@ public class ListTester {
         } else {
             System.out.println("not null");
         }
+        // generate list with 5 elements
+        System.out.println("Populating list with values 1 to 5...");
+        for (int i = 1; i <= 5; i++) {
+            le.setData(i);
+            ll.addElement(le);
+        }
+        // print the generated list
+        System.out.println("Printing the list starting from the head:");
+        ll.printLinkedListHead();
     }
 }
