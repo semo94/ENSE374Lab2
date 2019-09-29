@@ -12,10 +12,11 @@ public class LinkedList {
         this.le = new ListElement();
         this.le.setData(le.getData());
         if (head == null) {
-            this.head = this.tail = this.le;
+            head = tail = this.le;
         } else {
-            this.tail.setNext(this.le);
-            this.tail = this.le;
+            tail.setNext(this.le);
+            this.le.setPrev(tail);
+            tail = this.le;
         }
         _nElements++;
     }
@@ -51,12 +52,14 @@ public class LinkedList {
         // Remove the element
         if (temp != null) {
             temp.setNext(le.getNext());
+            le.getNext().setPrev(temp);
         }
         _nElements--;
         temp = le;
         le = null;
         return temp;
     }
+
     
     public void printLinkedListHead() {
         if (head == null) {
